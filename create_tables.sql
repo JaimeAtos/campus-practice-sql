@@ -1,0 +1,39 @@
+CREATE DATABASE ejemplo;
+GO
+
+USE ejemplo;
+GO
+
+CREATE TABLE Company(
+	Id INT PRIMARY KEY IDENTITY(1,1),
+	Name VARCHAR(150) UNIQUE,
+	Adress text,
+
+);
+GO
+
+CREATE TABLE Status(
+	Id INT PRIMARY KEY IDENTITY(1,1),
+	Name VARCHAR(50)
+);
+GO
+
+CREATE TABLE Projects(
+	Id INT PRIMARY KEY IDENTITY(1,1),
+	Name VARCHAR(150) UNIQUE,
+	StartDate DATETIME,
+	DeadLine DATETIME,
+	FinishedOn DATETIME,
+	StatusId INT 
+);
+GO
+
+CREATE TABLE Employees(
+	Id INT PRIMARY KEY IDENTITY(1,1),
+	FirstName VARCHAR(50),
+	LastName VARCHAR(50),
+	Email VARCHAR(100) UNIQUE,
+	Phone VARCHAR(12),
+	Salary decimal
+);
+GO
