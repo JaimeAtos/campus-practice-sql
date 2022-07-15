@@ -15,13 +15,11 @@ BEGIN
 		SELECT @flag = dbo.HasAnyProjec(@empleado)
 		IF(@flag = 1)
 			BEGIN
-				PRINT CAST(@idEmpresa AS VARCHAR) + '<- ID empresa'
-				--UPDATE PivoteProjectsEmployees SET ProjectID = @idEmpresa WHERE EmployeesID = @idEmpleado
+				UPDATE PivoteProjectsEmployees SET ProjectID = @idEmpresa WHERE EmployeesID = @idEmpleado
 			END
 		ELSE IF (@flag = 0)
 			BEGIN
-				PRINT CAST(@idEmpresa AS VARCHAR) + '<- ID empresa'
-				--UPDATE PivoteProjectsEmployees SET ProjectID = @idEmpresa WHERE EmployeesID = @idEmpleado
+				UPDATE PivoteProjectsEmployees SET ProjectID = @idEmpresa WHERE EmployeesID = @idEmpleado
 			END
 		FETCH empleadosCursor INTO @idEmpleado, @empleado
 	END
